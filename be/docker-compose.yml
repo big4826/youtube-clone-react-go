@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+    postgres:
+        image: postgres
+        restart: always
+        container_name: postgres-db-youtube-clone
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=password
+          - PGDATA=/var/lib/postgresql/data/pgdata
+        logging:
+          options:
+            max-size: 10m
+            max-file: "3"
+        ports:
+          - 5432:5432
+        volumes:
+          - ./data/postgresql:/var/lib/postgresql/data

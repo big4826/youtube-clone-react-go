@@ -5,3 +5,4 @@ settings.json
 build
 build_dev
 Makefile
+/be/data

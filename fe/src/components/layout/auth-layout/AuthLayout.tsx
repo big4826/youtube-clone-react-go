@@ -1,22 +1,21 @@
 import { Outlet } from "react-router-dom";
-import { MainContainer } from "./styled";
-import { Flex, Layout, Typography } from "antd";
+import { ContentContainer, MainContainer } from "./styled";
+import { Flex, Typography } from "antd";
 
 export const AuthLayout = () => {
   return (
     <MainContainer>
-      <Layout
+      {/* <Layout
       // position={"absolute"} left={"60px"} top={"10px"}
-      >
-        <Flex gap="middle" vertical>
-          {/* <img width={40} height={40} src={logo} alt="" /> */}
-          <Typography>
-            e-Report
-          </Typography>
-        </Flex>
-      </Layout>
-      <Outlet />
+      > */}
+      <Flex gap="middle" vertical>
+        {/* <img width={40} height={40} src={logo} alt="" /> */}
+        <Typography>e-Report</Typography>
+      </Flex>
+      {/* </Layout> */}
+      <ContentContainer>
+        <Outlet />
+      </ContentContainer>
     </MainContainer>
   );
 };
-
