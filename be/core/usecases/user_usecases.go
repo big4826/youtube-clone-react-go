@@ -4,6 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/peesaphanthavong/core/ports"
 	"github.com/peesaphanthavong/models"
+	"github.com/peesaphanthavong/models/response/user"
 )
 
 type UserUseCaser interface {
@@ -21,7 +22,7 @@ func NewUserUseCase(userRepository ports.UserRepository) *UserUseCase {
 	}
 }
 
-func (uc *UserUseCase) InquryALLUser(ctx *fiber.Ctx) ([]models.User, error) {
+func (uc *UserUseCase) InquryALLUser(ctx *fiber.Ctx) ([]user.UserResponse, error) {
 	users, err := uc.userRepository.GetAllUser(ctx.Context())
 	if err != nil {
 		return nil, err
